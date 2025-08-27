@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans d'Abonnement - Apogée Conciergerie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Palette de couleurs de la charte */
+            --deep-navy: #1A2E40;
+            --warm-taupe: #9C8A7E;
+            --soft-clay: #C4B6A9;
+            --pale-sand: #E2DCD3;
+            --cream: #F7F5F2;
+            --dark-charcoal: #2A2A2A;
+            
+            /* Accents subtils */
+            --gold-tint: #D6C5A3;
+            --sage-green: #A0A987;
+            
+            /* Typographie */
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark-charcoal);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #243B55 100%);
+            color: var(--cream);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .intro-section {
+            background-color: var(--cream);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--deep-navy);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--warm-taupe), var(--gold-tint));
+        }
+
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--dark-charcoal);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(26, 46, 64, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--pale-sand);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(26, 46, 64, 0.15);
+        }
+
+        .plan-card.recommended {
+            border: 2px solid var(--warm-taupe);
+            background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+        }
+
+        .plan-card.recommended::before {
+            content: "RECOMMANDÉ";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--warm-taupe);
+            color: var(--cream);
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            font-family: var(--font-sans);
+        }
+
+        .plan-name {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--deep-navy);
+        }
+
+        .plan-price {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--warm-taupe);
+        }
+
+        .plan-period {
+            font-size: 1rem;
+            color: var(--dark-charcoal);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .plan-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--dark-charcoal);
+            line-height: 1.5;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--pale-sand);
+            position: relative;
+            padding-left: 2rem;
+            color: var(--dark-charcoal);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--warm-taupe);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--warm-taupe) 0%, var(--soft-clay) 100%);
+            color: var(--cream);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: var(--font-sans);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(156, 138, 126, 0.3);
+            background: linear-gradient(135deg, #b59d91 0%, var(--warm-taupe) 100%);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--pale-sand) 0%, var(--cream) 100%);
+            padding: 4rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--deep-navy);
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--dark-charcoal);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-button {
+            background: transparent;
+            color: var(--deep-navy);
+            border: 2px solid var(--deep-navy);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: var(--font-sans);
+        }
+
+        .contact-button:hover {
+            background: var(--deep-navy);
+            color: var(--cream);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: var(--deep-navy);
+            color: var(--cream);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .plan-card {
+                padding: 2rem;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+            }
+
+            .contact-section {
+                padding: 2.5rem 1.5rem;
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container header-content">
+            <h1>Nos Plans d'Abonnement</h1>
+            <p>Choisissez le service de conciergerie qui correspond à vos besoins et laissez-nous nous occuper de votre patrimoine avec l'excellence que vous méritez.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="intro-section">
+            <h2>Une Offre sur Mesure</h2>
+            <p>Notre service de conciergerie immobilière d'exception s'adapte à vos exigences. De la gestion quotidienne au service ultra-premium, découvrez nos formules pensées pour préserver et valoriser votre patrimoine.</p>
+        </section>
+
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3 class="plan-name">Essentiel</h3>
+                <div class="plan-price">299€</div>
+                <div class="plan-period">par mois</div>
+                <div class="plan-description">
+                    L'accompagnement de base pour la gestion quotidienne de votre patrimoine immobilier avec notre expertise reconnue.
+                </div>
+                <ul class="features-list">
+                    <li>Surveillance régulière de vos biens</li>
+                    <li>Coordination des interventions de maintenance</li>
+                    <li>Rapport mensuel détaillé</li>
+                    <li>Disponibilité 6j/7 (9h-18h)</li>
+                    <li>Gestion administrative de base</li>
+                    <li>Service client dédié</li>
+                    <li>Réseau d'artisans qualifiés</li>
+                </ul>
+                <button class="cta-button">Choisir Essentiel</button>
+            </div>
+
+            <div class="plan-card recommended">
+                <h3 class="plan-name">Prestige</h3>
+                <div class="plan-price">599€</div>
+                <div class="plan-period">par mois</div>
+                <div class="plan-description">
+                    Notre service complet pour une gestion d'exception de votre patrimoine immobilier avec un suivi personnalisé.
+                </div>
+                <ul class="features-list">
+                    <li>Tout du plan Essentiel</li>
+                    <li>Conciergerie 7j/7 - 24h/24</li>
+                    <li>Gestion complète des travaux et rénovations</li>
+                    <li>Services de jardinage et d'entretien extérieur</li>
+                    <li>Gestion des locations et des locataires</li>
+                    <li>Rapport hebdomadaire + bilan trimestriel</li>
+                    <li>Accès prioritaire aux artisans partenaires</li>
+                    <li>Conseils personnalisés en investissement</li>
+                </ul>
+                <button class="cta-button">Choisir Prestige</button>
+            </div>
+
+            <div class="plan-card">
+                <h3 class="plan-name">Excellence</h3>
+                <div class="plan-price">999€</div>
+                <div class="plan-period">par mois</div>
+                <div class="plan-description">
+                    Le summum du service de conciergerie pour les patrimoines d'exception nécessitant une attention particulière et un service ultra-premium.
+                </div>
+                <ul class="features-list">
+                    <li>Tout du plan Prestige</li>
+                    <li>Gestionnaire personnel dédié</li>
+                    <li>Services de luxe (majordome, chef à domicile)</li>
+                    <li>Gestion des événements privés</li>
+                    <li>Sécurité renforcée et surveillance 24h/24</li>
+                    <li>Optimisation fiscale et juridique</li>
+                    <li>Réseau d'artisans de luxe exclusif</li>
+                    <li>Assistance voyage et déplacements</li>
+                    <li>Bilan mensuel personnalisé</li>
+                </ul>
+                <button class="cta-button">Choisir Excellence</button>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <h2>Besoin d'un service sur mesure ?</h2>
+            <p>Chaque patrimoine est unique et mérite une attention particulière. Contactez-nous pour élaborer ensemble une solution parfaitement adaptée à vos besoins spécifiques et à vos exigences d'excellence.</p>
+            <a href="#" class="contact-button">Demander un devis personnalisé</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Apogée Conciergerie - Service de Gestion Immobilière d'Exception</p>
+            <p>Votre patrimoine entre de bonnes mains</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation d'entrée progressive
+        const cards = document.querySelectorAll('.plan-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+
+        // Effet parallaxe subtil au scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header');
+            if (header) {
+                header.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
