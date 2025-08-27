@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('telephone', 20)->nullable();
             $table->text('adresse')->nullable();
             $table->datetime('date_inscription')->default(now());
-            $table->enum('type_client', ['particulier', 'entreprise', 'syndic']);
+            $table->enum('type_client', ['particulier', 'entreprise']);
             $table->boolean('actif')->default(true);
             $table->timestamps();
 

@@ -29,4 +29,10 @@ class Client extends Model
         'actif' => 'boolean',
         'type_client' => 'string'
     ];
+
+   
+    public function scopeByType($query, $type)
+    {
+        return $query->where('type_client', $type);
+    }
 }
