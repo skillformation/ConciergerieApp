@@ -1,61 +1,163 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ConciergerieApp - Dashboard Administratif
+
+Une application Laravel 12 avec interface d'administration Filament pour la gestion d'une conciergerie.
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="https://img.shields.io/badge/Laravel-12-red?style=for-the-badge&logo=laravel" alt="Laravel 12">
+<img src="https://img.shields.io/badge/Filament-v3-yellow?style=for-the-badge" alt="Filament v3">
+<img src="https://img.shields.io/badge/PHP-8.2+-blue?style=for-the-badge&logo=php" alt="PHP 8.2+">
 </p>
 
-## About Laravel
+## 🚀 Démarrage Rapide
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```bash
+# Installation
+composer install
+php artisan migrate
+php artisan db:seed
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Accès
+Dashboard: http://localhost/admin
+Login: admin@conciergerie.com / password123
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📚 Documentation
 
-## Learning Laravel
+| Document | Description |
+|----------|-------------|
+| [**MODIFICATIONS_DOCUMENTATION.md**](MODIFICATIONS_DOCUMENTATION.md) | Documentation complète de toutes les modifications |
+| [**GUIDE_TECHNIQUE.md**](GUIDE_TECHNIQUE.md) | Guide technique pour les développeurs |
+| [**GUIDE_UTILISATEUR.md**](GUIDE_UTILISATEUR.md) | Manuel d'utilisation du dashboard |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Fonctionnalités
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- 🖥️ **Dashboard Filament** complet avec gestion clients, plans, utilisateurs
+- 🔐 **Système de rôles** (Admin, Manager, Employee, Client)
+- 📝 **Page d'inscription** avec sélection de rôle
+- 🔍 **Recherche et filtres** avancés
+- 📊 **Données de test** réalistes (50 clients, 41 plans, 72 abonnements)
+- 🛡️ **Sécurité** avec contrôle d'accès granulaire
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 👥 Comptes de Test
 
-## Laravel Sponsors
+| Rôle | Email | Mot de passe | Permissions |
+|------|-------|--------------|-------------|
+| **Admin** | admin@conciergerie.com | password123 | Accès complet |
+| **Manager** | manager@conciergerie.com | password123 | Gestion équipe |
+| **Employee** | employee@conciergerie.com | password123 | Consultation |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🏗️ Stack Technique
 
-### Premium Partners
+- **Backend :** Laravel 12
+- **Interface Admin :** Filament v3
+- **Base de données :** MySQL 8.0+
+- **Frontend :** Livewire + Alpine.js
+- **Authentication :** Laravel Sanctum
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📁 Structure
 
-## Contributing
+```
+app/Filament/Resources/     # Resources Filament
+├── ClientResource.php      # Gestion clients
+├── PlanServiceResource.php # Gestion plans
+└── UserResource.php        # Gestion utilisateurs
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+app/Http/Middleware/        
+└── CheckRole.php           # Contrôle d'accès
 
-## Code of Conduct
+database/seeders/           # Génération données test
+├── UserSeeder.php          # 5 utilisateurs
+├── PlanServiceSeeder.php   # 41 plans
+└── ClientAbonnementSeeder.php # 50 clients + abonnements
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔧 Commandes Utiles
 
-## Security Vulnerabilities
+```bash
+# Régénérer les données de test
+php artisan migrate:fresh --seed
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Optimiser Filament
+php artisan filament:optimize
 
-## License
+# Nettoyer les caches
+php artisan route:clear && php artisan config:clear
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Créer une nouvelle resource
+php artisan make:filament-resource ModelName
+```
+
+## 📈 Statistiques des Données Générées
+
+- **👥 5 utilisateurs** avec rôles différents (4 actifs)
+- **👤 50 clients** (35 particuliers, 15 entreprises, 38 actifs)
+- **📋 41 plans de service** (37 actifs) répartis sur 4 niveaux
+- **📝 72 abonnements** (59 actifs) avec statuts variés
+- **💰 Revenus mensuels potentiels :** 7 950,60€
+- **📊 Prix moyen des plans :** 332,95€
+
+## 🎯 Fonctionnalités Détaillées
+
+### Gestion des Clients
+- Liste paginée avec recherche globale (nom, prénom, email)
+- Filtres : type de client, statut actif, abonnements
+- Formulaire complet avec gestion des abonnements
+- Tri personnalisable sur toutes les colonnes
+
+### Gestion des Plans
+- 4 niveaux : Basique (9-39€), Standard (39-119€), Premium (119-499€), Entreprise (499-1999€)
+- 3 cibles : Particulier, Entreprise, Mixte
+- Descriptions et positionnements automatiques
+
+### Système de Rôles
+- **Admin :** Accès complet à toutes les fonctions
+- **Manager :** Gestion des employés et clients
+- **Employee :** Consultation et gestion des clients
+- **Client :** Aucun accès au panel admin
+
+## 🛡️ Sécurité
+
+- **Middleware personnalisé** pour le contrôle d'accès
+- **Hashage automatique** des mots de passe
+- **Protection CSRF** sur tous les formulaires
+- **Validation** complète des données
+- **Comptes inactifs** automatiquement bloqués
+
+## 🚀 Mise en Production
+
+1. **Changez les mots de passe par défaut**
+2. **Configurez votre domaine** dans `.env`
+3. **Activez les caches** de production
+4. **Configurez les sauvegardes** automatiques
+
+```bash
+# Production
+php artisan optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+## 📝 Prochaines Étapes
+
+- [ ] Ajouter des widgets dashboard
+- [ ] Implémenter les notifications
+- [ ] Export de données (CSV, PDF)
+- [ ] API REST complète
+- [ ] Interface client séparée
+
+## 🤝 Contribution
+
+Cette application a été développée avec **Claude Code Assistant**. Pour toute question ou amélioration :
+
+1. Consultez la documentation technique
+2. Vérifiez les logs d'erreur
+3. Testez avec les comptes fournis
+
+---
+
+## 📄 License
+
+Ce projet utilise le framework Laravel sous [licence MIT](https://opensource.org/licenses/MIT).
+
+**Développé avec ❤️ et Claude Code Assistant - Août 2025**
