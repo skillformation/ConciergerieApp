@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Abonnement;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Client extends Model
 {
@@ -30,7 +32,11 @@ class Client extends Model
         'type_client' => 'string'
     ];
 
-   
+     public function abonnements(): HasMany
+    {
+        return $this->hasMany(Abonnement::class, 'id_client', 'id_client');
+    }
+    
     public function scopeByType($query, $type)
     {
         return $query->where('type_client', $type);

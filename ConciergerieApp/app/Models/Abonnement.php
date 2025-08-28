@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Client;
 use App\Models\PlanService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -31,6 +32,11 @@ class Abonnement extends Model
         'prix_actuel' => 'decimal:2',
         'statut' => 'string'
     ];
+
+     public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class, 'id_client', 'id_client');
+    }
 
        public function plan(): BelongsTo
     {

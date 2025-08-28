@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class ClientController extends Controller
 {
@@ -10,7 +12,7 @@ class ClientController extends Controller
     //Recuperation de la liste de clients (Query Builder)
     public function index(Request $request): JsonResponse
     {
-        //Chargement des relations des abonnements du clients 
+        //Chargement des relations des abonnements du clients ’
         //Pour chaque abonnement,chargement de sont plan.
         $query = Client::with(['abonnements.plan']);
 
