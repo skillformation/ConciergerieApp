@@ -146,18 +146,4 @@ php artisan view:cache
 - [ ] API REST complète
 - [ ] Interface client séparée
 
-## 🤝 Contribution
 
-Cette application a été développée avec **Claude Code Assistant**. Pour toute question ou amélioration :
-
-1. Consultez la documentation technique
-2. Vérifiez les logs d'erreur
-3. Testez avec les comptes fournis
-
----
-
-## 📄 License
-
-Ce projet utilise le framework Laravel sous [licence MIT](https://opensource.org/licenses/MIT).
-
-**Développé avec ❤️ et Claude Code Assistant - Août 2025**
